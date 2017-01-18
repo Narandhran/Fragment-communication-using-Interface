@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context="com.neemshade.gitsample.MainActivity">
 
     <FrameLayout
@@ -18,10 +16,11 @@
     </FrameLayout>
 
     <Button
+        android:id="@+id/click_FragOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/click_FragOne"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="171dp" />
-</RelativeLayout>
+        android:gravity="center_horizontal|center"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp" />
+
+</LinearLayout>

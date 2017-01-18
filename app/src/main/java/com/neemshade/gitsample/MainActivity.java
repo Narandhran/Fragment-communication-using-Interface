@@ -1,28 +1,27 @@
 package com.neemshade.gitsample;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
+import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
 
 import layout.FragmentOne;
 import layout.FragmentTwo;
 
-import static android.view.View.GONE;
+public class MainActivity extends AppCompatActivity implements interfaceInstance {
 
-public class MainActivity extends AppCompatActivity {
+    String fragOne_string;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-         final Button fragOneButton = (Button) findViewById(R.id.click_FragOne);
+
+        final Button fragOneButton = (Button) findViewById(R.id.click_FragOne);
+
          fragOneButton.setText("Fragment-1");
         fragOneButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,7 +43,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
     }
 
+    public void sendDatafromFragOne(String str) {
+//        Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+//        fragOne_string = str;
+//        Toast.makeText(getApplicationContext(), fragOne_string, Toast.LENGTH_SHORT).show();
+        FragmentTwo fragmentTwo = new FragmentTwo();
+        Bundle args = new Bundle();
+        args.putString("value", str);
+        fragmentTwo.setArguments(args);
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction
+                .addToBackStack(null)
+                .replace(R.id.fragment_container, fragmentTwo)
+                .commit();
+
+    }
 
 }
