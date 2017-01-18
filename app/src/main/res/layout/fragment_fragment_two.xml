@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="layout.FragmentOne">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="Fragment-2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="36sp"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:id="@+id/text_receive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:text="Received text" />
+
+
+    <Button
+        android:id="@+id/button_receive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Receive" />
+
+
+</LinearLayout>
